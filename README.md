@@ -1,6 +1,14 @@
-# outside-cli
+# where-is
 How to create a real-world Node CLI app with Node; Tutorial by https://github.com/timberio
 
+## done
+
+- where-is, returns longitude and latitude of a given address
+
+## to do
+
+- implement "how-far-from-here"
+- implement "distance between"
 
 ## Notes
 
