@@ -1,0 +1,27 @@
+{
+  "name": "where-is",
+  "version": "1.0.0",
+  "description": "get latitude/longitude for given zip code and Country from Google API",
+  "main": "index.js",
+  "scripts": {},
+  "bin": {
+    "where-is": "bin/where-is"
+  },
+  "devDependencies": {},
+  "dependencies": {
+    "@google/maps": "^0.5.5",
+    "axios": "^0.18.0",
+    "minimist": "^1.2.0",
+    "ora": "^3.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/hlazardzig/where-is.git"
+  },
+  "author": "Harald Lazardzig",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/hlazardzig/where-is/issues"
+  },
+  "homepage": "https://github.com/hlazardzig/where-is#readme"
+}
