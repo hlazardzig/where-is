@@ -5,9 +5,10 @@ const googleMapsClient = require('@google/maps').createClient({
   Promise: Promise
 })
 
-module.exports = async (address) => {
-  // Geocode an address.
-
+module.exports = async (address, myCBFunction) => {
+  //
+  // Geocode an address, wait for result of async promise
+  //
   let longlat = await googleMapsClient.geocode({address: address})
   .asPromise()
   .then((response) => {
@@ -19,7 +20,13 @@ module.exports = async (address) => {
     console.log(err);
   })
 
-  console.log('longlat is ' + JSON.stringify(longlat))
-  return longlat
+  // if called with function argument, call function here
+  //
+  if (myCBFunction) {
+    myCBFunction(longlat)
+  } else {
+    console.log('longlat is ' + JSON.stringify(longlat))
+  }
 
+  return longlat
 }
