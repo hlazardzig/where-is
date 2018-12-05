@@ -3,12 +3,12 @@ How to create a real-world Node CLI app with Node; Tutorial by https://github.co
 
 ## done
 
-- where-is, returns longitude and latitude of a given address
+- where-is, returns longitude and latitude of a given address/location
+- distance, returns distance between two addresses/locations in km
 
 ## to do
 
 - implement "how-far-from-here"
-- implement "distance between"
 
 
 ## Notes
@@ -28,8 +28,24 @@ How to create a real-world Node CLI app with Node; Tutorial by https://github.co
 - **<a href='https://github.com/axios/axios' target='_new'>axios/axios</a>:** Promise based HTTP client for the browser and node.js
 - **<a href='https://github.com/sindresorhus/ora' target='_new'>sindresorhus/ora</a>:** Elegant terminal spinner
 
-### ipstack and Ipdata 
+### ipstack, Ipdata and Maxmind
+- <a href="https://www.maxmind.com/en/locate-my-ip-address">Maxmind</a>: Detect Online Fraud and Locate Online Visitors
 - <a href='https://ipdata.co/index.html' target='_new'>Ipdata.co</a>: IP Geolocation and Threat Data API 
 (1.500 free requests per day)
 - <a href='https://ipstack.com/' target='_new'>ipstack.com</a>: Locate and identify website visitors by IP address 
 (10.000 free requests per month)
+
+### HTML5 Geolocation 
+
+Visit an arbitrary site and run this example in your browser's console:
+
+	navigator.geolocation.getCurrentPosition(function(position) {
+	   var pos = {
+	             lat: position.coords.latitude,
+	             lng: position.coords.longitude
+	           }
+	   console.log(pos.lat)
+	   console.log(pos.lng)
+	})
+
+For more on this see <a href="https://developers.google.com/maps/documentation/javascript/geolocation">developers.google.com</a>

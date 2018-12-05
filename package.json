@@ -5,7 +5,8 @@
   "main": "index.js",
   "scripts": {},
   "bin": {
-    "where-is": "bin/where-is"
+    "where-is": "bin/where-is",
+    "distance": "bin/distance"
   },
   "devDependencies": {},
   "dependencies": {
