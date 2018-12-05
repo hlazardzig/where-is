@@ -45,11 +45,10 @@ module.exports = async (addresses, myCBFunction) => {
   if (myCBFunction) {
     myCBFunction(latlong)
   } else {
-    console.log('latlong[0] is ' + JSON.stringify(latlong[0]))
-    console.log('latlong[1] is ' + JSON.stringify(latlong[1]))
+    console.log('latlong[0] of ' + addresses[0] + ' is ' + JSON.stringify(latlong[0]))
+    console.log('latlong[1] of ' + addresses[1] + ' is ' + JSON.stringify(latlong[1]))
     dist = PythagorasEquirectangular(latlong[0], latlong[1])
     console.log('Distance is ' + dist)
-
   }
 
   return latlong
