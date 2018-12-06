@@ -13,7 +13,6 @@ module.exports = async (address, myCBFunction) => {
   .asPromise()
   .then((response) => {
     // console.log(JSON.stringify(response.json.results))
-    // console.log(JSON.stringify(response.json.results[0].geometry.location))
     return response.json.results[0].geometry.location
   })
   .catch((err) => {

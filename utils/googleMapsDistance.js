@@ -40,15 +40,28 @@ module.exports = async (addresses, myCBFunction) => {
     })
   }
 
+  // see https://developers.google.com/maps/documentation/distance-matrix/intro
+  [origin, destination, distanceByCar] = await googleMapsClient.distanceMatrix({
+    origins: latlong[0], destinations: latlong[1]})
+    .asPromise()
+    .then((response) => {
+      // console.log(JSON.stringify(response.json.rows[0].elements[0].distance))
+      return [response.json.origin_addresses, response.json.destination_addresses, response.json.rows[0].elements[0].distance]
+    })
+    .catch((err) => {
+      console.log(err);
+    })
+
   // if called with function argument, call function here
   //
   if (myCBFunction) {
     myCBFunction(latlong)
   } else {
-    console.log('latlong[0] of ' + addresses[0] + ' is ' + JSON.stringify(latlong[0]))
-    console.log('latlong[1] of ' + addresses[1] + ' is ' + JSON.stringify(latlong[1]))
+    console.log('latlong[0] of ' + origin + ' is ' + JSON.stringify(latlong[0]))
+    console.log('latlong[1] of ' + destination + ' is ' + JSON.stringify(latlong[1]))
     dist = PythagorasEquirectangular(latlong[0], latlong[1])
-    console.log('Distance is ' + dist)
+    console.log('Distance as the crow flies is ' + dist.toFixed(2) + ' km')
+    console.log('and distance by car ' + distanceByCar.text)
   }
 
   return latlong
