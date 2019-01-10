@@ -8,19 +8,19 @@ const googleMapsClient = require('@google/maps').createClient({
 // see https://www.andrerinas.de/tutorials/javascript-genaue-latlon-geokoordinaten-entfernungen-errechnen.html
 
 function Deg2Rad( deg ) {
-	return deg * Math.PI / 180;
+	return deg * Math.PI / 180
 }
 
 function PythagorasEquirectangular( coord1, coord2 ) {
-	let lat1 = Deg2Rad(coord1.lat);
-	let lat2 = Deg2Rad(coord2.lat);
-	let lon1 = Deg2Rad(coord1.lng);
-	let lon2 = Deg2Rad(coord2.lng);
-	let R = 6371; // km
-	let x = (lon2-lon1) * Math.cos((lat1+lat2)/2);
-	let y = (lat2-lat1);
-	let d = Math.sqrt(x*x + y*y) * R;
-	return d;
+	let lat1 = Deg2Rad(coord1.lat)
+	let lat2 = Deg2Rad(coord2.lat)
+	let lon1 = Deg2Rad(coord1.lng)
+	let lon2 = Deg2Rad(coord2.lng)
+	let r = 6371 // km
+	let x = (lon2-lon1) * Math.cos((lat1+lat2)/2)
+	let y = (lat2-lat1)
+	let d = Math.sqrt(x*x + y*y) * r
+	return d
 }
 
 module.exports = async (addresses, myCBFunction) => {
@@ -36,7 +36,7 @@ module.exports = async (addresses, myCBFunction) => {
       return response.json.results[0].geometry.location
     })
     .catch((err) => {
-      console.log(err);
+      console.log(err)
     })
   }
 
@@ -51,7 +51,7 @@ module.exports = async (addresses, myCBFunction) => {
       return [response.json.origin_addresses, response.json.destination_addresses, response.json.rows[0].elements[0].distance]
     })
     .catch((err) => {
-      console.log(err);
+      console.log(err)
     })
 
   // if called with function argument, call function here
