@@ -1,6 +1,8 @@
 # where-is
 How to create a real-world Node CLI app with Node; Tutorial by https://github.com/timberio
 
+https://timber.io/blog/creating-a-real-world-cli-app-with-node/
+
 ## done
 
 - where-is, returns longitude and latitude of a given address/location
