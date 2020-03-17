@@ -11,8 +11,8 @@
   "devDependencies": {},
   "dependencies": {
     "@google/maps": "^0.5.5",
-    "axios": "~> 0.19.0",
-    "minimist": "^1.2.0",
+    "axios": "^0.19.2",
+    "minimist": "^1.2.5",
     "ora": "^3.4.0"
   },
   "repository": {
