@@ -12,7 +12,7 @@
   "dependencies": {
     "@google/maps": "^0.5.5",
     "axios": "^0.21.1",
-    "minimist": "^1.2.5",
+    "minimist": "^1.2.6",
     "ora": "^3.4.0"
   },
   "repository": {
